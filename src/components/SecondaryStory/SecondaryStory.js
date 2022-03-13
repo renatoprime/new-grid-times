@@ -6,7 +6,14 @@ const SecondaryStory = ({ id, title, image, abstract }) => {
   return (
     <a href={`/story/${id}`}>
       <Wrapper>
-        <Image alt={image.alt} src={image.src} />
+        <Image
+          alt={image.alt}
+          srcSet={`
+            ${image.src},
+            ${image.src.replace('.jpg', '@2x.jpg')} 2x
+        `}
+          src={image.src}
+        />
         <Heading>{title}</Heading>
         <Abstract>{abstract}</Abstract>
       </Wrapper>
