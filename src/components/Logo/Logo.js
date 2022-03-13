@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import format from 'date-fns/format';
+import { QUERIES } from '../../constants';
 
 const Logo = (props) => {
   return (
@@ -22,12 +23,18 @@ const Wrapper = styled.div`
 const Link = styled.a`
   font-family: var(--font-family-logo);
   font-size: 3rem;
+  color: var(--color-offblack);
+
+  @media ${QUERIES.tabletAndUp} {
+    font-size: 4rem;
+  }
 `;
 
 const TodaysDate = styled.p`
   font-size: 1.125rem;
   font-weight: var(--font-weight-medium);
   margin-top: -1rem;
+  color: var(--color-gray-900);
 `;
 
 export default Logo;
